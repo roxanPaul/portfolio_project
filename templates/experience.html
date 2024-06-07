@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ <h2>Experience:</h2>
+    <ul>
+        {% for experience in experiences %}
+            <li>{{ experience.title_experience }} at {{ experience.company_experience }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

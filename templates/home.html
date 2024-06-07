@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'base.html'  %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+</head>
+<body>
+
+    <h1>Welcome to My Portfolio</h1>
+
+    <!-- Display Profile information -->
+    <h2>Profile:</h2>
+    <ul>
+        {% for profile in result %}
+            <li>{{ profile.name }}, {{ profile.email }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+    <!-- Display Portfolio items -->
+    <h2>Portfolio:</h2>
+    <ul>
+        {% for item in result3 %}
+            <li>{{ item.title }} - {{ item.description_portfolio }} - {{ item.url_portfolio }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Display Education history -->
+    <h2>Education:</h2>
+    <ul>
+        {% for education in result4 %}
+            <li>{{ education.degree }} - {{ education.institution }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Display Experience history -->
+    <h2>Experience:</h2>
+    <ul>
+        {% for experience in result5 %}
+            <li>{{ experience.title_experience }} at {{ experience.company_experience }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Display Contact information -->
+    <h2>Contact:</h2>
+    <p>Email: {{ result6.email_contact }}</p>
+    <p>Phone: {{ result6.phone_contact }}</p>
+    <p>Address:{{ result6.address_contact}}</p>
+
+</body>
+
+</html>
